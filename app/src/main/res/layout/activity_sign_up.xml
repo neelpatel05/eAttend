@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.eattend.miniproject.eattend.SignUpActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <EditText
+            android:id="@+id/name_edit"
+            android:layout_width="327dp"
+            android:layout_height="47dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/eid_edit"
+            android:layout_marginTop="20dp"
+            android:hint="@string/name_tag" />
+
+        <EditText
+            android:id="@+id/eid_edit"
+            android:layout_width="327dp"
+            android:layout_height="47dp"
+            android:layout_alignStart="@+id/email_edit"
+            android:layout_below="@+id/name_edit"
+            android:layout_marginTop="16dp"
+            android:hint="@string/eid_tag" />
+
+        <EditText
+            android:id="@+id/email_edit"
+            android:layout_width="327dp"
+            android:layout_height="47dp"
+            android:layout_alignStart="@+id/password_edit"
+            android:layout_below="@+id/eid_edit"
+            android:layout_marginTop="17dp"
+            android:hint="@string/email_tag" />
+
+        <EditText
+            android:id="@+id/password_edit"
+            android:layout_width="327dp"
+            android:layout_height="47dp"
+            android:layout_below="@+id/mob_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:hint="Password" />
+
+        <EditText
+            android:id="@+id/mob_edit"
+            android:layout_width="327dp"
+            android:layout_height="47dp"
+            android:layout_below="@+id/email_edit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:hint="@string/mob_tag" />
+
+        <Button
+            android:id="@+id/signup_edit"
+            android:layout_width="327dp"
+            android:layout_height="40dp"
+            android:layout_alignStart="@+id/password_edit"
+            android:layout_below="@+id/password_edit"
+            android:layout_marginTop="49dp"
+            android:background="@android:color/holo_blue_dark"
+            android:text="Sign up" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

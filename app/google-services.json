@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "271514324361",
+    "firebase_url": "https://eattend-f20ad.firebaseio.com",
+    "project_id": "eattend-f20ad",
+    "storage_bucket": "eattend-f20ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271514324361:android:84dac8cb341795f8",
+        "android_client_info": {
+          "package_name": "com.eattend.miniproject.eattend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271514324361-8olv9u66kdmemhtjaq1bspc6b8gqgl4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZQgYFSxDbrIfIHQorldEFLwrITpwg0OM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
