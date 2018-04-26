@@ -36,11 +36,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Location mLastLocation;
     Marker mCurrLocationMarker;
     FusedLocationProviderClient mFusedLocationClient;
+    String uname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        Bundle extras = getIntent().getExtras();
+        uname = extras.getString("uname");
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -114,6 +118,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         @Override
                         public void run() {
                             Intent intent = new Intent(MapsActivity.this,QRActivity.class);
+                            intent.putExtra("uname",uname);
                             startActivity(intent);
                         }
                     }, 5000);

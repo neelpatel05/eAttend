@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class DashboardActivity extends AppCompatActivity {
 
+    String uname;
     TextView name;
 
     @Override
@@ -27,6 +28,7 @@ public class DashboardActivity extends AppCompatActivity {
         if(user!=null){
 
             name.setText(user.getEmail());
+            uname = user.getDisplayName();
 
         } else {
 
@@ -38,6 +40,7 @@ public class DashboardActivity extends AppCompatActivity {
 
     public void location(View view){
         Intent intent = new Intent(this, MapsActivity.class);
+        intent.putExtra("uname",uname);
         startActivity(intent);
     }
 
