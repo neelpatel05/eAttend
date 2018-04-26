@@ -18,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -59,10 +61,13 @@ public class SignUpActivity extends AppCompatActivity {
                                     .setDisplayName(name.getText().toString()).build();
                             user.updateProfile(profileUpdates);
 
-                           /* FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference myRef = database.getReference();
-                            myRef.child("users").child(user.getUid()).child("password").setValue(password);
-                            myRef.child("users").child(user.getUid()).child("email").setValue(email);*/
+                            String uid = user.getUid();
+                            myRef.child("users").child(uid).child("email").setValue(email.getText().toString());
+                            myRef.child("users").child(uid).child("name").setValue(name.getText().toString());
+                            myRef.child("users").child(uid).child("eid").setValue(eid.getText().toString());
+                            myRef.child("users").child(uid).child("mob").setValue(mob.getText().toString());
 
                             user.sendEmailVerification()
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
