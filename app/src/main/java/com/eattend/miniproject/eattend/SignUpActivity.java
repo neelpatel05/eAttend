@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
@@ -58,6 +59,11 @@ public class SignUpActivity extends AppCompatActivity {
                                     .setDisplayName(name.getText().toString()).build();
                             user.updateProfile(profileUpdates);
 
+                           /* FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference();
+                            myRef.child("users").child(user.getUid()).child("password").setValue(password);
+                            myRef.child("users").child(user.getUid()).child("email").setValue(email);*/
+
                             user.sendEmailVerification()
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
@@ -81,7 +87,8 @@ public class SignUpActivity extends AppCompatActivity {
                                     });
 
                         } else {
-                            Toast.makeText(SignUpActivity.this,"Failed",Toast.LENGTH_SHORT).show();
+                            String msg = task.getException().getLocalizedMessage();
+                            Toast.makeText(SignUpActivity.this, msg ,Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
