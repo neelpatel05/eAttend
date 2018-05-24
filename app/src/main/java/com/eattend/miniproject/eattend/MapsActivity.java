@@ -43,9 +43,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        Bundle extras = getIntent().getExtras();
-        uname = extras.getString("uname");
-
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -110,7 +107,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 double lat = latLng.latitude;
                 double lon = latLng.longitude;
-
                 if((22.551<=lat || lat<22.554) && (72.922<=lon || lon<72.925))
                 {
                     final Handler handler = new Handler();
@@ -118,7 +114,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         @Override
                         public void run() {
                             Intent intent = new Intent(MapsActivity.this,QRActivity.class);
-                            intent.putExtra("uname",uname);
                             startActivity(intent);
                         }
                     }, 5000);

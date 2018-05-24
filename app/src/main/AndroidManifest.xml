@@ -21,7 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".DashboardActivity" />
+        <activity
+            android:name=".DashboardActivity"
+            android:noHistory="true"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -30,8 +32,11 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
+
         <activity android:name=".QRActivity" />
-        <activity android:name=".FinalActivity"></activity>
+
+        <activity android:name=".FinalActivity"
+            android:noHistory="true"/>
     </application>
 
 </manifest>

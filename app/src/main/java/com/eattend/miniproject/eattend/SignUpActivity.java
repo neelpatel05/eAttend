@@ -68,6 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
                             myRef.child("users").child(uid).child("name").setValue(name.getText().toString());
                             myRef.child("users").child(uid).child("eid").setValue(eid.getText().toString());
                             myRef.child("users").child(uid).child("mob").setValue(mob.getText().toString());
+                            myRef.child("users").child(uid).child("attendance").setValue("0");
 
                             user.sendEmailVerification()
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
